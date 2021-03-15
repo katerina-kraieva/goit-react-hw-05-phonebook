@@ -1,0 +1,60 @@
+.list {
+  counter-reset: li;
+  list-style: none;
+  font: 14px 'Trebuchet MS', 'Lucida Sans';
+  padding: 0;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.item {
+  position: relative;
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0px 10px;
+  margin: 10px;
+  background: #edf6fa;
+  /* color: #444; */
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+  border-radius: 10px;
+}
+
+/* .item:before {
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  left: -35px;
+  top: 50%;
+  margin-top: -16px;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  text-align: center;
+  font-weight: bold;
+} */
+
+.button {
+  text-decoration: none;
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  line-height: 25px;
+  border-radius: 10px;
+  border: solid 2px #f8975f;
+  margin: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  color: #524f4e;
+  background: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.button:hover {
+  background: #f8975f;
+  color: white;
+  transition: 0.3s;
+}
