@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-// import { CSSTransition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import shortid from 'shortid';
 import s from './ContactForm.module.css';
-// import Alert from '../Alert/Alert';
+import Alert from '../Alert/Alert';
 
 class ContactForm extends Component {
   state = {
@@ -27,10 +27,10 @@ class ContactForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     if (this.state.name.trim() === '' || this.state.number.trim() === '') {
-      // this.setState({ message: `Fill Name and Number!`, showAlert: true });
-      // setTimeout(() => {
-      //   this.setState({ showAlert: false });
-      // }, 3000);
+      this.setState({ message: `Fill Name and Number!`, showAlert: true });
+      setTimeout(() => {
+        this.setState({ showAlert: false });
+      }, 3000);
       console.log('error');
     } else {this.props.onSubmit(this.state.name, this.state.number);}
 
@@ -40,15 +40,15 @@ class ContactForm extends Component {
   };
 
   render() {
-    const { name, number} = this.state;
+    const { name, number, message, showAlert} = this.state;
     const nameId = shortid.generate();
     const telId = shortid.generate();
 
     return (
       <>
-      {/* <CSSTransition in={showAlert} timeout={500} classNames="Alert" unmountOnExit>
+      <CSSTransition in={showAlert} timeout={500} classNames="Alert" unmountOnExit>
           <Alert message={message} />
-        </CSSTransition> */}
+        </CSSTransition>
       <form className={s.form} onSubmit={this.handleSubmit}>
         <label htmlFor={nameId}> Name </label>
         <input
